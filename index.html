@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - ACTION CHAPEL COTE D'IVOIRE</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, white, #007bff, #ffc107); /* Blanc, Bleu, Jaune */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .section button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .section button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function executeUSSD(code) {
+            // Redirige vers l'application téléphonique pour exécuter le code USSD
+            window.location.href = `tel:${encodeURIComponent(code)}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://files.catbox.moe/zsw2xr.jpg" alt="Logo de la société">
+        <h1>Action Chapel COTE D'IVOIRE</h1>
+    </header>
+
+    <div class="welcome-message">
+        Bienvenue sur notre plateforme de paiement ! Sélectionnez un réseau ci-dessous pour commencer.
+    </div>
+
+    <div class="container">
+        <!-- Wave -->
+        <div class="card">
+            <img src="https://files.catbox.moe/bj03jq.jpg" alt="Wave Icon">
+            <p>Wave</p>
+            <div class="section">
+                <a href="https://pay.wave.com/m/M_ci_4BrfWflBC8nN/c/ci/" target="_blank">
+                    <button>Payer avec Wave</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Orange Money -->
+        <div class="card">
+            <img src="https://files.catbox.moe/h2jpok.jpg" alt="Orange Money Icon">
+            <p>Orange Money</p>
+            <div class="section">
+                <button onclick="executeUSSD('#144*1*1*0788117011#')">Payer avec Orange Money</button>
+            </div>
+        </div>
+
+        <!-- MTN Money -->
+        <div class="card">
+            <img src="https://files.catbox.moe/bghu0y.jpg" alt="MTN Money Icon">
+            <p>MTN Money</p>
+            <div class="section">
+                <button onclick="executeUSSD('*133*3*1*0594801010#')">Payer avec MTN Money</button>
+            </div>
+        </div>
+
+        <!-- Moov Money -->
+        <div class="card">
+            <img src="https://files.catbox.moe/wl3xzc.jpg" alt="Moov Money Icon">
+            <p>Moov Money</p>
+            <div class="section">
+                <button onclick="executeUSSD('*155*1*1*0160153939#')">Payer avec Moov Money</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
